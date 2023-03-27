@@ -32,7 +32,4 @@ public class Hooks extends LaunchEmulator {
         driver = new AndroidDriver(remoteUrl, desiredCapabilities);
     }
 
-
 }
-
-
