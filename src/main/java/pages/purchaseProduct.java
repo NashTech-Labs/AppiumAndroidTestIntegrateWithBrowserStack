@@ -52,8 +52,6 @@ public class purchaseProduct extends LaunchEmulator {
     public void GetProductDetails() {
         String ProductName = wait.until(ExpectedConditions.visibilityOfElementLocated(productDetails)).getText();
         System.out.printf("Product Name is: " + ProductName);
-//        String GetProductPrice = wait.until(ExpectedConditions.visibilityOfElementLocated(capturePrice)).getText();
-//        System.out.printf("Price of product is:" + GetProductPrice);
     }
 
     public void AddToCart() {
@@ -69,9 +67,7 @@ public class purchaseProduct extends LaunchEmulator {
         int startYCoordinate = (int) (height * .6);
         int endYCoordinate = (int) (height * .2);
 
-        action.press(PointOption.point(middleOfX, startYCoordinate))
-                .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(2)))
-                .moveTo(PointOption.point(middleOfX, endYCoordinate)).release().perform();
+        action.press(PointOption.point(middleOfX, startYCoordinate)).waitAction(WaitOptions.waitOptions(Duration.ofSeconds(2))).moveTo(PointOption.point(middleOfX, endYCoordinate)).release().perform();
     }
 
     public void GoToCart() {
