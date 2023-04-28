@@ -1,4 +1,4 @@
-# AppiumAndroidTestIntegrateWithBrowserStack
+# Appium Android Test Integrate With BrowserStack
 
 # Introduction
 This template will help you implement how to run and test their automated Android Appium tests through a BrowserStack. In this project, I also implement Page Object Model, also known as POM, because it helps to reduce code duplication and improves test case maintenance.

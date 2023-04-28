@@ -37,7 +37,7 @@ public class purchaseProduct extends LaunchEmulator {
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
-    public void LoginUser() {
+    public void loginUser() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(TestUserName));
         LaunchEmulator.driver.findElement(TestUserName).sendKeys("standard_user");
         LaunchEmulator.driver.findElement(TestUserPassword).sendKeys("secret_sauce");
@@ -49,12 +49,12 @@ public class purchaseProduct extends LaunchEmulator {
 
     }
 
-    public void GetProductDetails() {
+    public void getProductDetails() {
         String ProductName = wait.until(ExpectedConditions.visibilityOfElementLocated(productDetails)).getText();
         System.out.printf("Product Name is: " + ProductName);
     }
 
-    public void AddToCart() {
+    public void addToCart() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(AddToCart)).click();
     }
 
@@ -70,18 +70,19 @@ public class purchaseProduct extends LaunchEmulator {
         action.press(PointOption.point(middleOfX, startYCoordinate)).waitAction(WaitOptions.waitOptions(Duration.ofSeconds(2))).moveTo(PointOption.point(middleOfX, endYCoordinate)).release().perform();
     }
 
-    public void GoToCart() {
+
+    public void goToCart() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnCart)).click();
         String ProductNameFromCart = driver.findElement(ProductName).getText();
         Assert.assertEquals(ProductNameFromCart, "Sauce Labs Backpack");
     }
 
-    public void ClickOnCheckout() {
+    public void clickOnCheckout() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(ClickOnCheckout));
         driver.findElement(ClickOnCheckout).click();
     }
 
-    public void AddCustomerDetails() {
+    public void addCustomerDetails() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(AddFirstName)).sendKeys("standard_user");
         driver.findElement(AddLastName).sendKeys("TestUserLastName");
         driver.findElement(AddZipcode).sendKeys("123456");
@@ -89,7 +90,7 @@ public class purchaseProduct extends LaunchEmulator {
 
     }
 
-    public void GetConformationMessage() {
+    public void getConformationMessage() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(ClickOnFinish)).click();
         String GetConformationMessage = wait.until(ExpectedConditions.elementToBeClickable(GetMessage)).getText();
         Assert.assertEquals(GetConformationMessage, "THANK YOU FOR YOU ORDER");

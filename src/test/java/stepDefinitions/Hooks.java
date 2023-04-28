@@ -8,8 +8,11 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.logging.Logger;
 
 public class Hooks extends LaunchEmulator {
+    Logger logger = Logger.getLogger(Hooks.class.getName());
+
 
     @Before
     public void setUp() throws MalformedURLException {
@@ -30,6 +33,10 @@ public class Hooks extends LaunchEmulator {
         URL remoteUrl = new URL("http://hub.browserstack.com/wd/hub");
 
         driver = new AndroidDriver(remoteUrl, desiredCapabilities);
+
+        logger.info("connection setup successfully");
+
+
     }
 
 }
