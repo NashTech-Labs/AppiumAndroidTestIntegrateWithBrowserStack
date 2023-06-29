@@ -1,0 +1,17 @@
+stages:
+  - test
+
+appium_job:
+  stage: test
+  image: maven:3.8.1-openjdk-11
+  variables:
+    BROWSERSTACK_USERNAME: "honev_iStDde"
+    BROWSERSTACK_ACCESS_KEY: "N51T8oBKH1fuMZptxepU"
+    BUILD_NAME: "alpha_0.1.7"
+    PLATFORM_NAME: "Android"
+    DEVICE_NAME: "Samsung Galaxy S22"
+    OS_VERSION: "12.0"
+    BROWSERSTACK_APP_URL: "bs://085ec0fa03dfc0d754a1a2cd777c03a3adbd593b"
+
+  script:
+    - mvn -Dtest=cucumberOptions.TestRunner test
